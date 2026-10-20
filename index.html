@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AyalasFamily.LLC — expressive tees, playful designs, and family styles.">
+  <title>AyalasFamily.LLC | T-Shirts for Every You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sale-ticker" aria-label="Sale announcement">
+    <div class="ticker-track">
+      <span>✦ DON'T MISS OUR SALE &nbsp; <b>25% OFF</b> ON ANY ADULT PLUS SIZE T-SHIRTS</span>
+      <span>✦ DON'T MISS OUR SALE &nbsp; <b>25% OFF</b> ON ANY ADULT PLUS SIZE T-SHIRTS</span>
+      <span>✦ DON'T MISS OUR SALE &nbsp; <b>25% OFF</b> ON ANY ADULT PLUS SIZE T-SHIRTS</span>
+      <span>✦ DON'T MISS OUR SALE &nbsp; <b>25% OFF</b> ON ANY ADULT PLUS SIZE T-SHIRTS</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#">
+      <img id="logo" src="assets/logo/logo.png" alt="AyalasFamily.LLC logo" onerror="this.style.display='none';document.getElementById('textLogo').style.display='block'">
+      <span id="textLogo" class="text-logo">AYALASFAMILY.LLC<small>SHIRTS FOR EVERY YOU</small></span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#sizes">Size Guide</a>
+      <a href="#story">Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button aria-label="Search" onclick="focusSearch()">⌕</button>
+      <button aria-label="Account">♙</button>
+      <button class="cart-button" aria-label="Cart" onclick="openCart()">🛒 <i id="cartCount">0</i></button>
+      <button class="mobile-menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <nav id="mobileNav" class="mobile-nav">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#shop" onclick="toggleMenu()">Shop</a>
+    <a href="#sizes" onclick="toggleMenu()">Size Guide</a>
+    <a href="#story" onclick="toggleMenu()">Story</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AYALASFAMILY.LLC · EVERY STYLE, EVERY YOU</p>
+        <h1>WEAR YOUR<br><em>STORY.</em></h1>
+        <p class="hero-sub">From gaming favorites to family humor and soft pastel artwork.<br>Find a design that feels like you.</p>
+        <a class="button button-light" href="#shop">SHOP NOW <span>→</span></a>
+      </div>
+      <div class="hero-art">
+        <img src="assets/images/hero.svg" alt="Fashion models wearing THREADS shirts"
+             onerror="this.style.display='none'; this.parentElement.classList.add('hero-fallback')">
+      </div>
+    </section>
+
+    <section id="sizes" class="size-section">
+      <div class="section-label"><span>SHOP</span><strong>BY SIZE</strong><i></i></div>
+      <div class="size-grid">
+        <a href="#shop" onclick="filterProducts('baby')" class="size-card"><div class="size-image baby">BABY</div><div><b>BABY</b><small>0–24M</small></div><span>→</span></a>
+        <a href="#shop" onclick="filterProducts('kids')" class="size-card"><div class="size-image kids">KIDS</div><div><b>KIDS</b><small>2T–14</small></div><span>→</span></a>
+        <a href="#shop" onclick="filterProducts('teens')" class="size-card"><div class="size-image teens">TEENS</div><div><b>TEENS</b><small>XS–XL</small></div><span>→</span></a>
+        <a href="#shop" onclick="filterProducts('adult')" class="size-card"><div class="size-image adult">ADULT</div><div><b>ADULT</b><small>S–3XL</small></div><span>→</span></a>
+        <a href="#shop" onclick="filterProducts('plus')" class="size-card"><div class="size-image plus">PLUS</div><div><b>PLUS SIZE</b><small>1X–5X</small></div><span>→</span></a>
+      </div>
+    </section>
+
+    <section class="deal-banner">
+      <div class="deal-side">▱ <b>TODAY'S<br>DEAL</b></div>
+      <div class="deal-screen">
+        <span>DON'T MISS OUR SALE</span>
+        <strong>25% OFF</strong>
+        <small>ON ANY ADULT PLUS SIZE T-SHIRTS</small>
+      </div>
+      <div class="deal-script">Style Has<br>No Size.</div>
+    </section>
+
+    <section id="shop" class="products-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE AYÁLASFAMILY EDIT</p><h2>SHOP THE DESIGNS</h2></div>
+        <button class="text-button" onclick="filterProducts('all')">VIEW ALL →</button>
+      </div>
+      <div id="filters" class="filters">
+        <button class="active" onclick="filterProducts('all')">All Designs</button>
+        <button onclick="filterProducts('gaming')">Gaming & Minecraft</button>
+        <button onclick="filterProducts('funny')">Funny & Teen</button>
+        <button onclick="filterProducts('baby')">Pastel & Baby-Inspired</button>
+        <button onclick="filterProducts('dogs')">Dog-Themed</button>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section class="pet-note">
+      <p class="eyebrow">A LITTLE SOMETHING FOR THE LITTLE DOGS</p>
+      <h2>SMALL-DOG TEES ARE A SEPARATE FIT.</h2>
+      <p>Our Chihuahua and small-dog apparel collection is intended for small dogs only. Pet-sized items will be listed separately from human T-shirts, with sizing confirmed before ordering.</p>
+    </section>
+
+    <section id="story" class="story-section">
+      <div class="story-photo"><span>MORE<br>THAN<br>JUST A<br>SHIRT</span></div>
+      <div class="story-copy">
+        <p class="eyebrow">OUR STORY</p>
+        <h2>COMFORT<br>MEETS<br>CONFIDENCE</h2>
+        <p>We believe great style starts with a great fit. Our shirts are designed for real life — from your first steps to your biggest dreams.</p>
+        <p>Because no matter your size, your story is always in style.</p>
+        <a class="button button-dark" href="#contact">OUR STORY <span>→</span></a>
+      </div>
+      <div class="story-family"><img src="assets/images/story.svg" alt="Family wearing shirts" onerror="this.parentElement.classList.add('story-fallback')"></div>
+    </section>
+
+    <section class="benefits">
+      <div><b>♧</b><span><strong>FREE SHIPPING</strong>On orders over $50</span></div>
+      <div><b>♢</b><span><strong>SECURE PAYMENTS</strong>Shop with confidence</span></div>
+      <div><b>↻</b><span><strong>EASY RETURNS</strong>Hassle-free within 30 days</span></div>
+      <div><b>♡</b><span><strong>LIFETIME QUALITY</strong>Built to last</span></div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-main">
+      <div class="footer-brand"><div class="text-logo">AYALASFAMILY.LLC<small>SHIRTS FOR EVERY YOU</small></div></div>
+      <div class="footer-links"><a href="#shop">Shop</a><a href="#story">About</a><a href="#sizes">Size Guide</a><a href="#story">Story</a><a href="#contact">Contact</a></div>
+      <div class="newsletter"><b>JOIN OUR COMMUNITY</b><p>Get exclusive deals, new arrivals & style inspo.</p><form onsubmit="subscribe(event)"><input id="email" type="email" placeholder="Your email address" required><button>→</button></form></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 AyalasFamily.LLC. All rights reserved.</span><span>Store preview · Checkout setup required before taking orders</span></div>
+  </footer>
+
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-head"><h3>Your Cart</h3><button onclick="closeCart()">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+    <div class="payment-area">
+      <p>PAYMENT BUTTONS</p>
+      <button class="pay-button" onclick="checkout('stripe')">CHECKOUT WITH CARD</button>
+      <button class="paypal-button" onclick="checkout('paypal')">CHECKOUT WITH PAYPAL</button>
+      <small>Hosted payment links must be added in <b>products.js</b> before accepting orders. No payment details are collected by this website.</small>
+    </div>
+  </div>
+  <div id="overlay" class="overlay" onclick="closeCart()"></div>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
